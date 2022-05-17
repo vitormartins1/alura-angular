@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AnonymousSubject } from 'rxjs/internal/Subject';
 
 @Component({
   selector: 'app-root',
@@ -7,13 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'alura-angular01';
-
-  destino: number;
-  valor: number;
+  transferencias: any[] = [];
 
   transferir($event) {
     console.log($event);
-    this.destino = $event.destino;
-    this.valor = $event.valor;
+    const transferencia = {...$event, data: new Date()};
+    this.transferencias.push(transferencia);
   }
 }
