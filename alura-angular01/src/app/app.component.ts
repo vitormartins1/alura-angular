@@ -10,12 +10,5 @@ import { AnonymousSubject } from 'rxjs/internal/Subject';
 export class AppComponent {
   title = 'alura-angular01';
 
-  constructor(private service: TransferenciaService) {
-
-  }
-
-  transferir($event) {
-    console.log($event);
-    this.service.adicionar($event);
-  }
+  constructor(private service: TransferenciaService) { }
 }
